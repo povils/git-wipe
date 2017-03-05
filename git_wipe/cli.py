@@ -47,6 +47,7 @@ def cleanup(token, timeout, skip_repository, skip_branch, preview, no_interactio
     if False == preview:
         if False == no_interaction:
             click.confirm(crayons.green('Delete these branches?'), abort=True)
+        click.echo(crayons.green('Deleting branches...'))
         with blindspin.spinner():
             github.delete_branches(repo_branches)
         click.echo(crayons.green('Done'))

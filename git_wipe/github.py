@@ -12,20 +12,12 @@ class Github:
         count = 0
         repo_branches = []
         user = self._py_github.get_user()
-        count += 1
-        print(count)
         for repo in user.get_repos(type='owner'):
             if repo.name not in skip_repository and repo.fork:
                 parent_repo = self._py_github.get_repo(repo.parent.id)
-                count += 1
-                print('parent: ' + str(count))
                 for branch in repo.get_branches():
                     if branch.name != 'master' and branch.name not in skip_branch:
-                        count += 1
-                        print('parent pulls: ' + str(count))
                         for pull in parent_repo.get_pulls(head=user.login + ':' + branch.name, state="closed"):
-                            count += 1
-                            print('is merged: ' + str(count))
                             if pull.is_merged():
                                 repo_branches.append([repo, branch])
 
