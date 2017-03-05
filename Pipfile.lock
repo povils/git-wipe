@@ -1,0 +1,49 @@
+{
+    "default": {
+        "python-jose": {
+            "version": "==1.3.2",
+            "hash": "sha256:35eca894ab91db1774251296949679396c46d6bc506ea03804b8f7a7d0204392"
+        },
+        "future": {
+            "version": "==0.16.0",
+            "hash": "sha256:e39ced1ab767b5936646cedba8bcce582398233d6a627067d4c6a454c90cfedb"
+        },
+        "blindspin": {
+            "version": "==2.0.1",
+            "hash": "sha256:b30ef7a26ef1637c1d047667b279e8c15dc2a78fcfaad6b3027d7217e752bdba"
+        },
+        "pycrypto": {
+            "version": "==2.6.1",
+            "hash": "sha256:f2ce1e989b272cfcb677616763e0a2e7ec659effa67a88aa92b3a65528f60a3c"
+        },
+        "PyGithub": {
+            "version": "==1.32",
+            "hash": "sha256:665043b9a24c4a95e5e4df22bfe7d22e6ab58f289a2eef190dc26a995aaeabae"
+        },
+        "six": {
+            "version": "==1.10.0",
+            "hash": "sha256:0ff78c403d9bccf5a425a6d31a12aa6b47f1c21ca4dc2573a7e2f32a97335eb1"
+        },
+        "click": {
+            "version": "==6.7",
+            "hash": "sha256:29f99fc6125fbc931b758dc053b3114e55c77a6e4c6c3a2674a2dc986016381d"
+        },
+        "ecdsa": {
+            "version": "==0.13",
+            "hash": "sha256:40d002cf360d0e035cf2cb985e1308d41aaa087cbfc135b2dc2d844296ea546c"
+        }
+    },
+    "develop": {},
+    "_meta": {
+        "sources": [
+            {
+                "url": "https://pypi.python.org/simple",
+                "verify_ssl": true
+            }
+        ],
+        "requires": {},
+        "hash": {
+            "sha256": "22acf6109cb40ad043a6a90a77c1f61384b86743df6959afd31b04206a80c062"
+        }
+    }
+}
