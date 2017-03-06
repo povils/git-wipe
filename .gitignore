@@ -1,6 +1,6 @@
 *.pyc
 __pycache__/
 .cache
-pipenv.egg-info/
+git_wipe.egg-info
 *.swp
 *.swo

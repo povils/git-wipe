@@ -1,3 +1,0 @@
-[console_scripts]
-git-wipe = git_wipe:cli
-
