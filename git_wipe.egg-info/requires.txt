@@ -1,0 +1,4 @@
+crayons
+click>=6.7
+blindspin>=2.0.1
+pygithub

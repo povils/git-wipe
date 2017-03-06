@@ -3,10 +3,11 @@ import crayons
 import blindspin
 import sys
 import os
- 
-from .__version__ import __version__
-from .env import GIT_WIPE_TOKEN
-from .github import Github 
+
+from git_wipe.__version__ import __version__
+from git_wipe.env import GIT_WIPE_TOKEN
+from git_wipe.github_client import GithubClient
+
 from github.GithubException import BadCredentialsException
 
 @click.group(invoke_without_command=True)
@@ -28,12 +29,12 @@ def cli(ctx, help):
 def cleanup(token, timeout, skip_repository, skip_branch, preview, no_interaction):
     if token is None:
         token = click.prompt(crayons.green('Please enter your Github access token'))
-   
-    github = Github().create(token, timeout)
+
+    github_client = GithubClient(token, timeout)
     try:
         click.echo(crayons.green('Searching for branches. This may take a while...'), err=True)
         with blindspin.spinner():
-            repo_branches = github.get_merged_fork_branches(skip_repository, skip_branch)
+            repo_branches = github_client.get_merged_fork_branches(skip_repository, skip_branch)
     except BadCredentialsException:
         click.echo(crayons.red('Bad credentials. Please provide valid access token'), err=True)
         sys.exit(1)
@@ -43,22 +44,21 @@ def cleanup(token, timeout, skip_repository, skip_branch, preview, no_interactio
         sys.exit(0)
 
     list_branches(repo_branches)
-    
+
     if False == preview:
         if False == no_interaction:
             click.confirm(crayons.green('Delete these branches?'), abort=True)
         click.echo(crayons.green('Deleting branches...'))
         with blindspin.spinner():
-            github.delete_branches(repo_branches)
+            github_client.delete_branches(repo_branches)
         click.echo(crayons.green('Done'))
 
 def list_branches(repo_branches):
     for repo, branch in repo_branches:
-        click.echo(crayons.blue(repo.full_name + ':' + branch.name))
- 
+        click.echo(crayons.yellow(repo.full_name + ':' + branch.name))
+
 # Add commands
 cli.add_command(cleanup)
 
 if __name__ == '__main__':
     cli()
-#

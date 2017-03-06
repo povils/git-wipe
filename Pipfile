@@ -1,8 +1,10 @@
-[[source]]
-url = "https://pypi.python.org/simple"
-verify_ssl = true
+[dev-packages]
+pytest = "*"
 
 [packages]
 blindspin = "*"
 PyGithub = "*"
 click = "*"
+
+[requires]
+python_version = "2.7"
