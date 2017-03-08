@@ -19,7 +19,7 @@ def cli(ctx, help):
         """CLI tool for deleting Github branches"""
         click.echo(ctx.get_help())
 
-@click.command(help='Cleanup your remote merged branches as Pull Requests')
+@click.command(help='Cleanup merged branches as Pull Requests')
 @click.option('--timeout', default=30, help='Set max timeout in seconds')
 @click.option('--token', default=GIT_WIPE_TOKEN, help='Github Access Token')
 @click.option('--skip-repository', multiple=True, help='Skip certain repositories')
@@ -30,17 +30,20 @@ def cleanup(token, timeout, skip_repository, skip_branch, preview, no_interactio
     if token is None:
         token = click.prompt(crayons.green('Please enter your Github access token'))
 
+    print(list(skip_repository))
+    print(skip_branch)
     github_client = GithubClient(token, timeout)
     try:
         click.echo(crayons.green('Searching for branches. This may take a while...'), err=True)
         with blindspin.spinner():
-            repo_branches = github_client.get_merged_fork_branches(skip_repository, skip_branch)
+            #repo_branches = github_client.get_merged_fork_branches(skip_repository, skip_branch)
+            repo_branches = github_client.get_merged_fork_branches(skip_repository, 'b')
     except BadCredentialsException:
         click.echo(crayons.red('Bad credentials. Please provide valid access token'), err=True)
         sys.exit(1)
 
     if not repo_branches:
-        click.echo(crayons.green('Congratulations! You have nothing to delete'))
+        click.echo(crayons.green('Congratulations! No remote branches are available for cleaning up'))
         sys.exit(0)
 
     list_branches(repo_branches)

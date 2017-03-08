@@ -1,10 +1,12 @@
 [dev-packages]
 pytest = "*"
+mock = "*"
 
 [packages]
 blindspin = "*"
 PyGithub = "*"
 click = "*"
+crayons = "*"
 
 [requires]
 python_version = "2.7"
