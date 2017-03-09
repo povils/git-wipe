@@ -13,4 +13,7 @@ install:
   - "pipenv install --dev"
 
 script:
-  - pipenv run pytest git_wipe/tests 
+  - pipenv run pytest git_wipe/tests
+
+after_success:
+  - coveralls 

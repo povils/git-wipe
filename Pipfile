@@ -1,6 +1,8 @@
 [dev-packages]
 pytest = "*"
 mock = "*"
+pytest-cov = "*"
+coveralls = "*"
 
 [packages]
 blindspin = "*"
