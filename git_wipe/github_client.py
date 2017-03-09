@@ -1,5 +1,6 @@
 from github import Github
 
+
 class GithubClient:
 
     def __init__(self, token, timeout):

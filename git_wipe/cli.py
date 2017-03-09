@@ -10,6 +10,7 @@ from git_wipe.github_client import GithubClient
 
 from github.GithubException import BadCredentialsException
 
+
 @click.group(invoke_without_command=True)
 @click.option('--help', is_flag=True, default=None, help='Show this message then exit.')
 @click.version_option(prog_name=crayons.yellow('git-wipe'), version=__version__)
@@ -18,6 +19,7 @@ def cli(ctx, help):
     if ctx.invoked_subcommand is None:
         """CLI tool for deleting Github branches"""
         click.echo(ctx.get_help())
+
 
 @click.command(help='Cleanup merged branches as Pull Requests')
 @click.option('--timeout', default=30, help='Set max timeout in seconds')
@@ -28,18 +30,23 @@ def cli(ctx, help):
 @click.option('--no-interaction', is_flag=True, default=False, help='Do not ask any interactive question')
 def cleanup(token, timeout, skip_repository, skip_branch, preview, no_interaction):
     if token is None:
-        token = click.prompt(crayons.green('Please enter your Github access token'))
+        token = click.prompt(crayons.green(
+            'Please enter your Github access token'))
 
     github_client = GithubClient(token, timeout)
     try:
-        click.echo(crayons.green('Searching for branches. This may take a while...'), err=True)
+        click.echo(crayons.green(
+            'Searching for branches. This may take a while...'), err=True)
         with blindspin.spinner():
-            repo_branches = github_client.get_merged_fork_branches(skip_repository, skip_branch)
+            repo_branches = github_client.get_merged_fork_branches(
+                skip_repository, skip_branch)
     except BadCredentialsException:
-        click.echo(crayons.red('Bad credentials. Please provide valid access token'), err=True)
+        click.echo(crayons.red(
+            'Bad credentials. Please provide valid access token'), err=True)
         sys.exit(1)
     if not repo_branches:
-        click.echo(crayons.green('Congratulations! No remote branches are available for cleaning up'))
+        click.echo(crayons.green(
+            'Congratulations! No remote branches are available for cleaning up'))
         sys.exit(0)
     list_branches(repo_branches)
 
@@ -50,6 +57,7 @@ def cleanup(token, timeout, skip_repository, skip_branch, preview, no_interactio
         with blindspin.spinner():
             github_client.delete_branches(repo_branches)
         click.echo(crayons.green('Done'))
+
 
 def list_branches(repo_branches):
     for repo, branch in repo_branches:
