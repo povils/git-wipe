@@ -62,7 +62,8 @@ def cleanup(token, timeout, skip_repository, skip_branch, preview, no_interactio
 def list_branches(repo_branches):
     for repo, branch in repo_branches:
         click.echo(crayons.yellow(repo.full_name + ':' + branch.name))
-
+    
+    click.echo(crayons.yellow('Total: ' + str(len(repo_branches))))
 # Add commands
 cli.add_command(cleanup)
 
