@@ -12,17 +12,21 @@
             "version": "==0.16.0",
             "hash": "sha256:e39ced1ab767b5936646cedba8bcce582398233d6a627067d4c6a454c90cfedb"
         },
-        "colorama": {
-            "version": "==0.3.7",
-            "hash": "sha256:a4c0f5bc358a62849653471e309dcc991223cf86abafbec17cd8f41327279e89"
+        "blindspin": {
+            "version": "==2.0.1",
+            "hash": "sha256:b30ef7a26ef1637c1d047667b279e8c15dc2a78fcfaad6b3027d7217e752bdba"
         },
         "pycrypto": {
             "version": "==2.6.1",
             "hash": "sha256:f2ce1e989b272cfcb677616763e0a2e7ec659effa67a88aa92b3a65528f60a3c"
         },
-        "blindspin": {
-            "version": "==2.0.1",
-            "hash": "sha256:b30ef7a26ef1637c1d047667b279e8c15dc2a78fcfaad6b3027d7217e752bdba"
+        "PyGithub": {
+            "version": "==1.32",
+            "hash": "sha256:665043b9a24c4a95e5e4df22bfe7d22e6ab58f289a2eef190dc26a995aaeabae"
+        },
+        "colorama": {
+            "version": "==0.3.7",
+            "hash": "sha256:a4c0f5bc358a62849653471e309dcc991223cf86abafbec17cd8f41327279e89"
         },
         "six": {
             "version": "==1.10.0",
@@ -31,10 +35,6 @@
         "click": {
             "version": "==6.7",
             "hash": "sha256:29f99fc6125fbc931b758dc053b3114e55c77a6e4c6c3a2674a2dc986016381d"
-        },
-        "PyGithub": {
-            "version": "==1.32",
-            "hash": "sha256:665043b9a24c4a95e5e4df22bfe7d22e6ab58f289a2eef190dc26a995aaeabae"
         },
         "ecdsa": {
             "version": "==0.13",
@@ -46,9 +46,9 @@
             "version": "==1.10.0",
             "hash": "sha256:0ff78c403d9bccf5a425a6d31a12aa6b47f1c21ca4dc2573a7e2f32a97335eb1"
         },
-        "coverage": {
-            "version": "==4.3.4",
-            "hash": "sha256:b25aa3531220faaf1727fc29bc000798476b4a30f429dc07898d5da48caefa15"
+        "setuptools": {
+            "version": "==34.3.1",
+            "hash": "sha256:9349b47bcdef2e695065791260f9416b7aae8739fd30c6849f807bce5281d046"
         },
         "pbr": {
             "version": "==2.0.0",
@@ -70,21 +70,21 @@
             "version": "==3.0.6",
             "hash": "sha256:da0ab50c7eec0683bc24f1c1137db1f4111752054ecdad63125e7ec71316b813"
         },
-        "appdirs": {
-            "version": "==1.4.3",
-            "hash": "sha256:d8b24664561d0d34ddfaec54636d502d7cea6e29c3eaf68f3df6180863e2166e"
+        "mock": {
+            "version": "==2.0.0",
+            "hash": "sha256:5ce3c71c5545b472da17b72268978914d0252980348636840bd34a00b5cc96c1"
         },
-        "setuptools": {
-            "version": "==34.3.1",
-            "hash": "sha256:9349b47bcdef2e695065791260f9416b7aae8739fd30c6849f807bce5281d046"
+        "coverage": {
+            "version": "==4.3.4",
+            "hash": "sha256:adf04843188418b012dd1974e397a7ac3faa1855cbcd69083e3af4da6de9dd81"
         },
         "pyparsing": {
             "version": "==2.2.0",
             "hash": "sha256:fee43f17a9c4087e7ed1605bd6df994c6173c1e977d7ade7b651292fab2bd010"
         },
-        "mock": {
-            "version": "==2.0.0",
-            "hash": "sha256:5ce3c71c5545b472da17b72268978914d0252980348636840bd34a00b5cc96c1"
+        "appdirs": {
+            "version": "==1.4.3",
+            "hash": "sha256:d8b24664561d0d34ddfaec54636d502d7cea6e29c3eaf68f3df6180863e2166e"
         }
     },
     "_meta": {
