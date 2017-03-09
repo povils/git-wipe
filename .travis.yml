@@ -13,7 +13,7 @@ install:
   - "pipenv install --dev"
 
 script:
-  - pipenv run pytest git_wipe/tests
+  - pipenv run pytest --cov-config .coveragerc --cov=git_wipe git_wipe/tests
 
 after_success:
   - coveralls 
