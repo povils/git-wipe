@@ -42,25 +42,21 @@
         }
     },
     "develop": {
-        "py": {
-            "version": "==1.4.32",
-            "hash": "sha256:2d4bba2e25fff58140e6bdce1e485e89bb59776adbe01d490baa6b1f37a3dd6b"
+        "six": {
+            "version": "==1.10.0",
+            "hash": "sha256:0ff78c403d9bccf5a425a6d31a12aa6b47f1c21ca4dc2573a7e2f32a97335eb1"
         },
-        "coveralls": {
-            "version": "==1.1",
-            "hash": "sha256:ff403f4ddf6937327ef267735ac987a0f8fdd083d0f26f0002549ef68451e886"
-        },
-        "setuptools": {
-            "version": "==34.3.1",
-            "hash": "sha256:9349b47bcdef2e695065791260f9416b7aae8739fd30c6849f807bce5281d046"
+        "coverage": {
+            "version": "==4.3.4",
+            "hash": "sha256:b25aa3531220faaf1727fc29bc000798476b4a30f429dc07898d5da48caefa15"
         },
         "pbr": {
             "version": "==2.0.0",
             "hash": "sha256:d9b69a26a5cb4e3898eb3c5cea54d2ab3332382167f04e30db5e1f54e1945e45"
         },
-        "six": {
-            "version": "==1.10.0",
-            "hash": "sha256:0ff78c403d9bccf5a425a6d31a12aa6b47f1c21ca4dc2573a7e2f32a97335eb1"
+        "py": {
+            "version": "==1.4.32",
+            "hash": "sha256:2d4bba2e25fff58140e6bdce1e485e89bb59776adbe01d490baa6b1f37a3dd6b"
         },
         "pytest-cov": {
             "version": "==2.4.0",
@@ -78,17 +74,9 @@
             "version": "==1.4.3",
             "hash": "sha256:d8b24664561d0d34ddfaec54636d502d7cea6e29c3eaf68f3df6180863e2166e"
         },
-        "coverage": {
-            "version": "==4.3.4",
-            "hash": "sha256:b25aa3531220faaf1727fc29bc000798476b4a30f429dc07898d5da48caefa15"
-        },
-        "requests": {
-            "version": "==2.13.0",
-            "hash": "sha256:1a720e8862a41aa22e339373b526f508ef0c8988baf48b84d3fc891a8e237efb"
-        },
-        "docopt": {
-            "version": "==0.6.2",
-            "hash": "sha256:49b3a825280bd66b3aa83585ef59c4a8c82f2c8a522dbe754a8bc8d08c85c491"
+        "setuptools": {
+            "version": "==34.3.1",
+            "hash": "sha256:9349b47bcdef2e695065791260f9416b7aae8739fd30c6849f807bce5281d046"
         },
         "pyparsing": {
             "version": "==2.2.0",
@@ -110,7 +98,7 @@
             "python_version": "2.7"
         },
         "hash": {
-            "sha256": "e05753f3641f03fa94c23224d685435099724140714171a4f430b2fcefd06218"
+            "sha256": "4d8d31e774d87d88d8bcf07923bcc5673a140610b154aca24f2f86fbebd849ee"
         }
     }
 }

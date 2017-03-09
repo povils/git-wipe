@@ -11,9 +11,10 @@ install:
   - "pip install pipenv"
   - "pipenv lock"
   - "pipenv install --dev"
+  - "pip install coveralls"
 
 script:
-  - pipenv run pytest --cov-config .coveragerc --cov=git_wipe git_wipe/tests
+  - pipenv run py.test git_wipe/tests --doctest-modules git_wipe -v --cov git_wipe --cov-report term-missing
 
 after_success:
   - coveralls 
