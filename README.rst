@@ -27,7 +27,7 @@ Install
 
 Usage
 ------
-In order to use **git-swipe** first you need to create your `Personal Access Token <https://github.com/settings/tokens>`_.
+In order to use **git-wipe** first you need to create your `Personal Access Token <https://github.com/settings/tokens>`_.
 
 You can set this token to your environment variable:
 
