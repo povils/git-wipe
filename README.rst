@@ -1,6 +1,15 @@
 git-wipe: Cleanup your fork branches which were merged as PR to parent repository
 =================================================================================
 
+.. image:: https://img.shields.io/pypi/v/git-wipe.svg
+    :target: https://pypi.python.org/pypi/git-wipe
+
+.. image:: https://img.shields.io/pypi/l/git-wipe.svg
+    :target: https://pypi.python.org/pypi/git-wipe
+
+.. image:: https://img.shields.io/pypi/pyversions/git-wipe.svg
+    :target: https://pypi.python.org/pypi/git-wipe
+
 .. image:: https://coveralls.io/repos/github/povils/git-wipe/badge.svg?branch=master
     :target: https://coveralls.io/github/povils/git-wipe?branch=master
 
