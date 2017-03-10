@@ -7,7 +7,6 @@ class GithubClient:
         self._github = Github(login_or_token=token, timeout=timeout)
 
     def get_merged_fork_branches(self, skip_repository, skip_branch):
-        count = 0
         repo_branches = []
         user = self._github.get_user()
         for repo in user.get_repos(type='owner'):
@@ -18,6 +17,7 @@ class GithubClient:
                         for pull in parent_repo.get_pulls(head=user.login + ':' + branch.name, state="closed"):
                             if pull.is_merged():
                                 repo_branches.append([repo, branch])
+                                break
 
         return repo_branches
 
