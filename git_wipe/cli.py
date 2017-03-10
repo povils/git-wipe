@@ -40,6 +40,7 @@ def cleanup(token, timeout, skip_repository, skip_branch, preview, no_interactio
         with blindspin.spinner():
             repo_branches = github_client.get_merged_fork_branches(
                 skip_repository, skip_branch)
+        click.echo(crayons.yellow('Founded branches:\n'))
     except BadCredentialsException:
         click.echo(crayons.red(
             'Bad credentials. Please provide valid access token'), err=True)
@@ -52,7 +53,7 @@ def cleanup(token, timeout, skip_repository, skip_branch, preview, no_interactio
 
     if False == preview:
         if False == no_interaction:
-            click.confirm(crayons.green('Delete these branches?'), abort=True)
+            click.confirm(crayons.green('\nDelete these branches?'), abort=True)
         click.echo(crayons.green('Deleting branches...'))
         with blindspin.spinner():
             github_client.delete_branches(repo_branches)
