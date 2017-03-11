@@ -5,3 +5,5 @@ git_wipe.egg-info
 *.swp
 *.swo
 .coverage
+dist
+build

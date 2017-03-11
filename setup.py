@@ -30,6 +30,7 @@ setup(
     author='Povilas Susinskas',
     author_email='povilassusinskas@gmail.com',
     py_modules=['git_wipe'],
+    packages=['git_wipe'],
     install_requires=required,
     entry_points={
         'console_scripts': ['git-wipe=git_wipe:cli'],
