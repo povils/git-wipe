@@ -21,11 +21,11 @@ git-wipe: Cleanup your fork branches which were merged as PR to parent repositor
 
 The problem
 -----------------
-From time to time if you have many forks and do many pull requests it is inevitable that you will have stale branches. And as time marches on the number of these branches across forks can become big.
+If you have many forks and do many pull requests it is inevitable that you will have stale branches. And as time marches on the number of these branches across your forks can become big.
 
 The answer
 -----------
-**git-wipe** is simple command line tool to cleanup your Github fork branches.
+**git-wipe** is simple command line tool to cleanup these branches in your Github forks.
 
 Install
 -------
