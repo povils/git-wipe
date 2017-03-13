@@ -40,7 +40,6 @@ def cleanup(token, timeout, skip_repository, skip_branch, preview, no_interactio
         with blindspin.spinner():
             repo_branches = github_client.get_merged_fork_branches(
                 skip_repository, skip_branch)
-        click.echo(crayons.yellow('Founded branches:\n'))
     except BadCredentialsException:
         click.echo(crayons.red(
             'Bad credentials. Please provide valid access token'), err=True)
@@ -49,6 +48,8 @@ def cleanup(token, timeout, skip_repository, skip_branch, preview, no_interactio
         click.echo(crayons.green(
             'Congratulations! No remote branches are available for cleaning up'))
         sys.exit(0)
+
+    click.echo(crayons.yellow('Founded branches:\n'))
     list_branches(repo_branches)
 
     if False == preview:
